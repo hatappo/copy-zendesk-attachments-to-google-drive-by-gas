@@ -1,4 +1,9 @@
-# copy-zendesk-attachments-to-google-drive-by-gas
+# auto-copy-zendesk-attachments-to-google-drive
+
+Zendesk のチケットの添付ファイルを Google Drive にコピーします。
+Zendesk の Webhook と連携することで自動的に実行されます。
+
+また、チケット ID を指定しその添付ファイル群を Drive にコピーするバッチ処理（単発実行）も可能です。
 
 ## セットアップ
 
@@ -7,7 +12,7 @@
 #### コードの作成
 
 - https://script.google.com を開く
-- 「新しいプロジェクト」をクリック → copy-zendesk-attachments-to-google-drive-by-gas」などに変更
+- 「新しいプロジェクト」をクリック → `auto-copy-zendesk-attachments-to-google-drive` などに変更
 - 「エディタ」 > `Code.gs` にコードをコピペ。
 
 #### プロジェクトの設定
@@ -130,3 +135,11 @@ const WEBHOOK_SHARED_SECRET = getProp_('WEBHOOK_SHARED_SECRET');  // ランダ�
 
 - Google Cloud Secret Manager でシークレットを管理する。 Script Property はシークレット管理ではない。
 - GAS CLI https://github.com/google/clasp を導入。
+
+## Future Feature Plans
+
+- [ ] 対応するチケットの社内コメントにファイル URL をコメントするオプション。
+- [ ] チケット単位でのフォルダ分離するオプション
+- [ ] フォーム単位でのフォルダ分離するオプション
+- [ ] ファイル拡張子の変更マッピングのオプション
+- [ ] Zip ファイルを展開するオプション
